@@ -8,12 +8,14 @@
  r_start=0;
  r_end=60; % unit Angstroms
  r_interval=1; % Angstroms
- PDBfile='1EY0.pdb';
  N_interval=(r_end-r_start)/r_interval;
  PDDF=zeros(1,N_interval);
  r=linspace(r_start, r_end, N_interval);
+ PDBfile='1EY0.pdb';
  %Reading the PDB file
  pdbstruct = pdbread(PDBfile);
+ %Alternatively can be retrieved directly from rcsb
+ %pdbstruct = pdbread('http://www.rcsb.org/pdb/files/1EY0.pdb');
  [m,nAtoms] = size(pdbstruct.Model.Atom);
  for i=1:nAtoms
      X1=pdbstruct.Model.Atom(1,i).X;
