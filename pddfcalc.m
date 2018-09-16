@@ -28,9 +28,9 @@
          X2=pdbstruct.Model.Atom(1,j).X;
          Y2=pdbstruct.Model.Atom(1,j).Y;
          Z2=pdbstruct.Model.Atom(1,j).Z;
-         Distance = sqrt ((X2-X1)^2+(Y2-Y1)^2+(Z2-Z1)^2);
-         indc = ceil(Distance/r_interval);
-         PDDF(indc)=PDDF(indc)+1;
+         distance = sqrt ((X2-X1)^2+(Y2-Y1)^2+(Z2-Z1)^2);
+         indx = ceil(distance/r_interval);
+         PDDF(indx)=PDDF(indx)+1;
      end
  end
  PDDF=PDDF/2; %Because each pair is calculated twice
